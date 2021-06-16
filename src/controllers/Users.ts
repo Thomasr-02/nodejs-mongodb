@@ -13,6 +13,6 @@ routes.post('/users',usersController.add);
 
 routes.patch('/users', usersController.update);
 
-routes.delete('/users', usersController.delete);
+routes.delete('/users/:id', usersController.delete);
 
 export default routes;

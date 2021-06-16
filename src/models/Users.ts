@@ -1,27 +1,28 @@
 import mongoose from '../configs/connectionMongoose';
+import bcrypt from 'bcrypt';
 
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
-    require: true
+    required: true
   },
   age: {
     type: String,
-    require: true
+    required: true
   },
   email: {
     type: String,
-    require: true,
-    unique:true,
+    required: true,
+    unique: true,
     lowercase: true
   },
   password: {
     type: String,
-    require: true,
+    required: true,
     select: false
   },
-  createdAt:{
-    type:Date,
+  createdAt: {
+    type: Date,
     default: Date.now
   },
 })

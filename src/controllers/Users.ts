@@ -11,7 +11,7 @@ routes.get('/users/:id',usersController.getById);
 
 routes.post('/users',usersController.add);
 
-routes.patch('/users', usersController.update);
+routes.patch('/users/:id', usersController.update);
 
 routes.delete('/users/:id', usersController.delete);
 

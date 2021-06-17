@@ -28,7 +28,12 @@ export default class Users {
     }
   }
   public async update(req: Request, res: Response): Promise<Response> {
-    return res.send("");
+    try {
+      const user = await User.findOneAndUpdate({_id: req.params.id },req.body);
+      return res.status(200).json(user);
+    } catch (error) {
+      return res.status(400).json(error)
+    }
   }
   public async delete(req: Request, res: Response): Promise<Response> {
     try {
